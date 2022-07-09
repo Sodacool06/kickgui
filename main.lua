@@ -21,6 +21,8 @@ Frame.Parent = KickPanel
 Frame.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
 Frame.Position = UDim2.new(0.0641200542, 0, 0.229067937, 0)
 Frame.Size = UDim2.new(0, 247, 0, 201)
+Frame.Active = true
+Frame.Draggable = true
 
 UICorner.Parent = Frame
 
@@ -147,7 +149,7 @@ local function HFBT_fake_script() -- TextButton.LocalScript
 	local script = Instance.new('LocalScript', TextButton)
 
 	local frame = script.Parent.Parent
-	
+
 	script.Parent.MouseButton1Click:Connect(function()
 		frame.Visible = false
 	end)
@@ -158,9 +160,9 @@ local function HEZO_fake_script() -- Button.LocalScript
 
 	local Target = script.Parent.Parent.Target
 	local Reason = script.Parent.Parent.Reason
-	
+
 	local Remotes = game.ReplicatedStorage.Remotes
-	
+
 	script.Parent.MouseButton1Click:Connect(function()
 		Remotes.Kick:FireServer(Target.Text, Reason.Text)
 	end)
@@ -170,7 +172,7 @@ local function OGBVG_fake_script() -- TextButton_2.LocalScript
 	local script = Instance.new('LocalScript', TextButton_2)
 
 	local Frame = script.Parent.Parent.Frame
-	
+
 	script.Parent.MouseButton1Click:Connect(function()
 		if Frame.Visible == true then
 			Frame.Visible = false
